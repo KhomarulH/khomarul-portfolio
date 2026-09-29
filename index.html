@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portofolio modern bertema dark dan minimalis oleh Khomarul - Full-Stack Developer & Creative Technologist. Menampilkan arsitektur web modern, animasi 60fps, dan solusi perangkat lunak berkinerja tinggi.">
+  <meta name="keywords"
+    content="Portfolio, Full-Stack Developer, Dark Minimalist, Creative Technologist, Web Developer, Web Designer, JavaScript, React, Next.js, Khomarul">
+  <meta name="author" content="Khomarul">
+  <meta name="theme-color" content="#090a10">
+
+  <!-- Open Graph / Meta Sosial -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Khomarul — Full-Stack Developer & Creative Technologist">
+  <meta property="og:description"
+    content="Portofolio modern bertema dark dan minimalis dengan animasi interaktif 60fps.">
+  <meta property="og:image" content="assets/og-image.png">
+
+  <title>Khomarul — Full-Stack Developer &amp; Creative Technologist</title>
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+  <!-- Interactive Mouse Spotlight Flashlight Effect -->
+  <div class="cursor-spotlight" id="cursor-spotlight"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- =================================================================
+       FLOATING GLASS NAVBAR
+       ================================================================= -->
+  <header class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="nav-brand">
+        <span class="nav-logo-mark">H</span>
+        <span>Khomarul<span class="text-gradient">.dev</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#hero" class="nav-link active" id="link-hero">Beranda</a></li>
+          <li><a href="#about" class="nav-link" id="link-about">Tentang</a></li>
+          <li><a href="#projects" class="nav-link" id="link-projects">Proyek</a></li>
+          <li><a href="#skills" class="nav-link" id="link-skills">Keahlian</a></li>
+          <li><a href="#experience" class="nav-link" id="link-experience">Pengalaman</a></li>
+          <li><a href="#contact" class="nav-link" id="link-contact">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Accent Theme Palette Picker -->
+        <div class="theme-picker" title="Pilih Aksen Tema" id="theme-picker">
+          <span class="color-dot dot-indigo active" data-theme="indigo" title="Cosmic Indigo"></span>
+          <span class="color-dot dot-cyan" data-theme="cyan" title="Neon Cyan"></span>
+          <span class="color-dot dot-emerald" data-theme="emerald" title="Cyber Emerald"></span>
+          <span class="color-dot dot-rose" data-theme="rose" title="Electric Rose"></span>
+          <span class="color-dot dot-amber" data-theme="amber" title="Solar Amber"></span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Buka Menu Navigasi"
+          aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===============================================================
+         HERO SECTION
+         =============================================================== -->
+    <section class="hero" id="hero">
+      <canvas id="hero-canvas"></canvas>
+
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="status-badge reveal">
+              <span class="pulse-dot"></span>
+              <span>Tersedia untuk Proyek Baru &amp; Kolaborasi</span>
+            </div>
+
+            <h1 class="hero-title reveal delay-1">
+              Merancang Ekosistem Digital Berjiwa <span class="text-gradient">Minimalis &amp; Presisi</span>
+            </h1>
+
+            <div class="hero-typewriter-container reveal delay-2">
+              <span>Saya adalah seorang</span>
+              <span class="typewriter-text" id="typewriter-role">Full-Stack Developer</span>
+            </div>
+
+            <p class="hero-desc reveal delay-3">
+              Membangun aplikasi web performa tinggi, sistem cloud terukur, dan interaksi visual 60fps dengan arsitektur
+              modern dan estetika gelap yang berkelas.
+            </p>
+
+            <div class="hero-actions reveal delay-4">
+              <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
+                <span>Lihat Karya Saya</span>
+                <span class="btn-icon">→</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="hero-btn-contact">
+                <span>Hubungi Saya</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual: 3D Interactive Profile & Code Badge -->
+          <div class="hero-visual reveal-scale delay-2">
+            <div class="visual-card-wrapper">
+              <div class="visual-ambient-glow"></div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-badge floating-badge-1">
+                <span class="badge-icon react">⚡</span>
+                <span>Ultra Fast 60fps</span>
+              </div>
+              <div class="floating-badge floating-badge-2">
+                <span class="badge-icon perf">✦</span>
+                <span>Clean Architecture</span>
+              </div>
+
+              <!-- Main Visual Card -->
+              <div class="visual-card tilt-card" id="hero-card">
+                <div class="avatar-container">
+                  <div class="avatar-frame">
+                    <!-- High-tech SVG Geometric Developer Avatar -->
+                    <svg class="avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="100" height="100" rx="20" fill="#0d111a" />
+                      <circle cx="50" cy="50" r="42" stroke="url(#av-grad)" stroke-width="2" stroke-dasharray="4 4" />
+                      <circle cx="50" cy="38" r="16" fill="url(#av-grad)" />
+                      <path d="M22 82C22 66.536 34.536 54 50 54C65.464 54 78 66.536 78 82" stroke="url(#av-grad)"
+                        stroke-width="4" stroke-linecap="round" />
+                      <circle cx="50" cy="38" r="10" fill="#090a10" />
+                      <defs>
+                        <linearGradient id="av-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#6366f1" />
+                          <stop offset="1" stop-color="#06b6d4" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="profile-meta">
+                    <h3>Khomarul</h3>
+                    <span>@Khomarul.codes</span>
+                  </div>
+                </div>
+
+                <div class="code-badge-box">
+                  <div class="code-line">
+                    <span class="code-keyword">const</span>
+                    <span class="code-fn">developer</span> = {
+                  </div>
+                  <div class="code-line" style="padding-left: 1rem;">
+                    <span>focus:</span>
+                    <span class="code-str">"Full-Stack / UI"</span>,
+                  </div>
+                  <div class="code-line" style="padding-left: 1rem;">
+                    <span>passion:</span>
+                    <span class="code-str">"Clean Code &amp; Speed"</span>,
+                  </div>
+                  <div class="code-line" style="padding-left: 1rem;">
+                    <span>status:</span>
+                    <span class="code-num">200</span> <span style="color: #64748b;">// Ready</span>
+                  </div>
+                  <div class="code-line">};</div>
+                </div>
+
+                <div class="card-stats-mini">
+                  <div class="stat-item-mini">
+                    <div class="stat-val">5+</div>
+                    <div class="stat-lbl">Tahun</div>
+                  </div>
+                  <div class="stat-item-mini">
+                    <div class="stat-val">30+</div>
+                    <div class="stat-lbl">Proyek</div>
+                  </div>
+                  <div class="stat-item-mini">
+                    <div class="stat-val">99%</div>
+                    <div class="stat-lbl">Uptime</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         ABOUT SECTION
+         =============================================================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="mono-tag">Tentang Saya</span>
+          <h2>Harmoni Antara <span class="text-gradient">Rekayasa &amp; Seni Digital</span></h2>
+          <p>Membantu startup, kreator, dan perusahaan mewujudkan produk digital berdaya saing tinggi.</p>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Profile Photo -->
+          <div class="about-photo-col reveal-left">
+            <div class="profile-photo-wrapper">
+              <div class="profile-glow-ring"></div>
+              <div class="profile-img-frame">
+                <img src="assets/profile.jpg" alt="Foto Khomarul" class="profile-img" loading="lazy" />
+                <div class="profile-img-overlay"></div>
+              </div>
+              <div class="profile-status-badge">
+                <span class="status-dot"></span>
+                <span>Available for Work</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Text -->
+          <div class="about-text reveal">
+            <p>
+              Halo! Saya <strong>Khomarul</strong>, seorang software engineer yang berdedikasi menciptakan antarmuka
+              digital yang bersih, intuitif, dan responsif. Berbekal pengalaman lebih dari 5 tahun, saya memadukan
+              kehandalan backend dengan pengalaman visual interaktif yang memikat.
+            </p>
+            <p>
+              Filosofi saya berakar pada <em>minimalisme yang fungsional</em>: setiap elemen antarmuka, setiap transisi
+              animasi, dan setiap baris kode harus memiliki tujuan yang jelas untuk meningkatkan kenyamanan pengguna
+              akhir tanpa mengorbankan performa.
+            </p>
+            <div style="margin-top: 1rem;">
+              <a href="#contact" class="btn btn-secondary" id="btn-download-cv">
+                <span>Konsultasi Proyek</span>
+                <span class="btn-icon">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-grid reveal-right">
+            <div class="stat-card">
+              <div class="stat-number text-gradient">5+</div>
+              <div class="stat-label">Tahun Pengalaman Profesional</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number text-gradient">35+</div>
+              <div class="stat-label">Aplikasi Berhasil Diluncurkan</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number text-gradient">99%</div>
+              <div class="stat-label">Tingkat Kepuasan Klien</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number text-gradient">15+</div>
+              <div class="stat-label">Kontribusi Open-Source</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Philosophy Card -->
+        <div class="philosophy-card reveal delay-2">
+          <div class="quote-icon">“</div>
+          <div class="quote-text">
+            "Kesederhanaan bukanlah ketiadaan fitur, melainkan hasil dari penyempurnaan tiada henti hingga hanya yang
+            esensial dan bermakna yang tersisa."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         PROJECTS SECTION
+         =============================================================== -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="mono-tag">Portofolio Pilihan</span>
+          <h2>Karya Unggulan &amp; <span class="text-gradient">Eksplorasi Produk</span></h2>
+          <p>Koleksi aplikasi web, platform terdistribusi, dan aplikasi mobile yang dibuat dengan perhatian detail
+            tingkat tinggi.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all" id="filter-all">Semua Proyek</button>
+          <button class="filter-btn" data-filter="Web App" id="filter-web">Web App</button>
+          <button class="filter-btn" data-filter="Mobile" id="filter-mobile">Mobile</button>
+          <button class="filter-btn" data-filter="UI/UX" id="filter-ui">UI/UX &amp; Design</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- Project Card 1 -->
+          <div class="project-card tilt-card reveal delay-1" data-category="Web App" data-id="1">
+            <div class="project-img-wrapper">
+              <span class="project-category-badge">Web App</span>
+              <svg class="project-banner-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="240" fill="#0d111a" />
+                <circle cx="200" cy="120" r="80" stroke="rgba(99,102,241,0.2)" stroke-width="2" />
+                <circle cx="200" cy="120" r="50" stroke="rgba(168,85,247,0.3)" stroke-width="2" />
+                <path d="M50 180 Q 150 70, 250 140 T 380 60" stroke="url(#proj-grad1)" stroke-width="4" fill="none" />
+                <rect x="70" y="50" width="100" height="40" rx="10" fill="rgba(255,255,255,0.04)"
+                  stroke="rgba(255,255,255,0.1)" />
+                <rect x="230" y="150" width="120" height="45" rx="10" fill="rgba(255,255,255,0.04)"
+                  stroke="rgba(255,255,255,0.1)" />
+                <defs>
+                  <linearGradient id="proj-grad1" x1="50" y1="60" x2="380" y2="180">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div>
+                <h3>AetherAI Enterprise Analytics</h3>
+                <p>Platform dashboard AI analitik real-time dengan pemrosesan jutaan data point dan visualisasi data
+                  prediktif interaktif.</p>
+              </div>
+              <div class="project-tags">
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-details" aria-label="Lihat Detail AetherAI">
+                  <span>Detail</span>
+                  <span>→</span>
+                </button>
+                <div class="project-links">
+                  <a href="#" class="project-btn-icon" title="Kode Sumber GitHub" aria-label="GitHub">⚙</a>
+                  <a href="#" class="project-btn-icon" title="Live Preview" aria-label="Live Demo">↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="project-card tilt-card reveal delay-2" data-category="Web App" data-id="2">
+            <div class="project-img-wrapper">
+              <span class="project-category-badge">Web App</span>
+              <svg class="project-banner-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="240" fill="#0d111a" />
+                <rect x="50" y="40" width="300" height="160" rx="16" fill="rgba(255,255,255,0.02)"
+                  stroke="rgba(255,255,255,0.08)" />
+                <line x1="50" y1="90" x2="350" y2="90" stroke="rgba(255,255,255,0.05)" />
+                <line x1="120" y1="40" x2="120" y2="200" stroke="rgba(255,255,255,0.05)" />
+                <circle cx="85" cy="65" r="14" fill="rgba(6,182,212,0.2)" />
+                <path d="M140 160 L180 120 L220 145 L270 95 L320 110" stroke="#06b6d4" stroke-width="3" fill="none"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="project-content">
+              <div>
+                <h3>Nexus DeFi Multi-Chain Portal</h3>
+                <p>Protokol agregasi likuiditas terdesentralisasi dengan swap instan lintas blockchain dan analitik gas
+                  fee terendah.</p>
+              </div>
+              <div class="project-tags">
+                <span class="tech-tag">Vue 3</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Web3.js</span>
+                <span class="tech-tag">Ethers.js</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-details" aria-label="Lihat Detail Nexus DeFi">
+                  <span>Detail</span>
+                  <span>→</span>
+                </button>
+                <div class="project-links">
+                  <a href="#" class="project-btn-icon" title="Kode Sumber GitHub" aria-label="GitHub">⚙</a>
+                  <a href="#" class="project-btn-icon" title="Live Preview" aria-label="Live Demo">↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="project-card tilt-card reveal delay-3" data-category="Mobile" data-id="3">
+            <div class="project-img-wrapper">
+              <span class="project-category-badge">Mobile</span>
+              <svg class="project-banner-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="240" fill="#0d111a" />
+                <rect x="145" y="25" width="110" height="190" rx="20" fill="rgba(255,255,255,0.03)"
+                  stroke="rgba(16,185,129,0.3)" stroke-width="2" />
+                <circle cx="200" cy="50" r="6" fill="rgba(255,255,255,0.2)" />
+                <path d="M165 140 C 180 110, 190 150, 205 125 S 225 155, 235 115" stroke="#10b981" stroke-width="2.5"
+                  fill="none" />
+                <circle cx="200" cy="180" r="16" fill="rgba(16,185,129,0.15)" />
+              </svg>
+            </div>
+            <div class="project-content">
+              <div>
+                <h3>Zenith Pulse Health &amp; Habit</h3>
+                <p>Aplikasi mobile pelacak bioritme kesehatan, kebiasaan produktif harian, dan sinkronisasi smartwatch
+                  cerdas.</p>
+              </div>
+              <div class="project-tags">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Expo</span>
+                <span class="tech-tag">Redux</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-details" aria-label="Lihat Detail Zenith Pulse">
+                  <span>Detail</span>
+                  <span>→</span>
+                </button>
+                <div class="project-links">
+                  <a href="#" class="project-btn-icon" title="Kode Sumber GitHub" aria-label="GitHub">⚙</a>
+                  <a href="#" class="project-btn-icon" title="Live Preview" aria-label="Live Demo">↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div class="project-card tilt-card reveal delay-1" data-category="UI/UX" data-id="4">
+            <div class="project-img-wrapper">
+              <span class="project-category-badge">UI/UX</span>
+              <svg class="project-banner-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="240" fill="#0d111a" />
+                <circle cx="120" cy="110" r="45" fill="rgba(244,63,94,0.15)" stroke="#f43f5e" stroke-width="2" />
+                <circle cx="200" cy="110" r="45" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="2" />
+                <circle cx="280" cy="110" r="45" fill="rgba(6,182,212,0.15)" stroke="#06b6d4" stroke-width="2" />
+                <line x1="60" y1="190" x2="340" y2="190" stroke="rgba(255,255,255,0.1)" stroke-dasharray="6 6" />
+              </svg>
+            </div>
+            <div class="project-content">
+              <div>
+                <h3>Luminary Studio Design System</h3>
+                <p>Sistem desain digital enterprise dengan 120+ komponen aksesibel, tokens otomatis, dan dokumentasi
+                  interaktif.</p>
+              </div>
+              <div class="project-tags">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Storybook</span>
+                <span class="tech-tag">Design Tokens</span>
+                <span class="tech-tag">WCAG AAA</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-details" aria-label="Lihat Detail Luminary Studio">
+                  <span>Detail</span>
+                  <span>→</span>
+                </button>
+                <div class="project-links">
+                  <a href="#" class="project-btn-icon" title="Kode Sumber GitHub" aria-label="GitHub">⚙</a>
+                  <a href="#" class="project-btn-icon" title="Live Preview" aria-label="Live Demo">↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 5 -->
+          <div class="project-card tilt-card reveal delay-2" data-category="Web App" data-id="5">
+            <div class="project-img-wrapper">
+              <span class="project-category-badge">Web App</span>
+              <svg class="project-banner-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="240" fill="#0d111a" />
+                <rect x="70" y="60" width="260" height="120" rx="12" fill="rgba(0,0,0,0.5)"
+                  stroke="rgba(255,255,255,0.1)" />
+                <circle cx="95" cy="80" r="5" fill="#f43f5e" />
+                <circle cx="112" cy="80" r="5" fill="#fbbf24" />
+                <circle cx="129" cy="80" r="5" fill="#10b981" />
+                <text x="95" y="125" fill="#6366f1" font-family="monospace" font-size="14">$ docker-compose up -d</text>
+                <text x="95" y="150" fill="#34d399" font-family="monospace" font-size="13">✓ Deployment cluster
+                  live</text>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div>
+                <h3>Synthetix Cloud Edge Engine</h3>
+                <p>Platform manajemen deployment kontainer di edge network dengan streaming telemetry logs dan
+                  zero-downtime rolling updates.</p>
+              </div>
+              <div class="project-tags">
+                <span class="tech-tag">Golang</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">gRPC</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-details" aria-label="Lihat Detail Synthetix Cloud">
+                  <span>Detail</span>
+                  <span>→</span>
+                </button>
+                <div class="project-links">
+                  <a href="#" class="project-btn-icon" title="Kode Sumber GitHub" aria-label="GitHub">⚙</a>
+                  <a href="#" class="project-btn-icon" title="Live Preview" aria-label="Live Demo">↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 6 -->
+          <div class="project-card tilt-card reveal delay-3" data-category="Mobile" data-id="6">
+            <div class="project-img-wrapper">
+              <span class="project-category-badge">Mobile</span>
+              <svg class="project-banner-svg" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="240" fill="#0d111a" />
+                <circle cx="200" cy="120" r="70" stroke="rgba(168,85,247,0.3)" stroke-width="3" />
+                <path d="M160 120 Q 180 80, 200 120 T 240 120" stroke="#a855f7" stroke-width="3" fill="none" />
+                <circle cx="200" cy="120" r="25" fill="rgba(99,102,241,0.2)" />
+              </svg>
+            </div>
+            <div class="project-content">
+              <div>
+                <h3>Aura Sound Ambient Spatial App</h3>
+                <p>Aplikasi soundscape binaural audio berdefinisi tinggi untuk ketenangan kerja dan kualitas relaksasi
+                  mendalam.</p>
+              </div>
+              <div class="project-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">Audio DSP</span>
+                <span class="tech-tag">Supabase</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-details" aria-label="Lihat Detail Aura Sound">
+                  <span>Detail</span>
+                  <span>→</span>
+                </button>
+                <div class="project-links">
+                  <a href="#" class="project-btn-icon" title="Kode Sumber GitHub" aria-label="GitHub">⚙</a>
+                  <a href="#" class="project-btn-icon" title="Live Preview" aria-label="Live Demo">↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         SKILLS & TECH STACK
+         =============================================================== -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="mono-tag">Keahlian &amp; Instrumen</span>
+          <h2>Teknologi yang Saya <span class="text-gradient">Gunakan Sehari-hari</span></h2>
+          <p>Kombinasi bahasa pemrograman, framework modern, dan arsitektur database untuk membangun produk tangguh.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1: Frontend -->
+          <div class="skill-category-card reveal-left">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⚡</div>
+              <div>
+                <h3>Frontend &amp; UI Architecture</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Antarmuka dinamis, cepat, dan adaptif</p>
+              </div>
+            </div>
+
+            <div class="skill-items">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>React.js / Next.js</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="95%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>TypeScript &amp; Modern JavaScript</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="92%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>CSS3 / Animations / Glassmorphism</span>
+                  <span>96%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="96%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Vue.js &amp; Nuxt</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & Cloud -->
+          <div class="skill-category-card reveal delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⚙</div>
+              <div>
+                <h3>Backend &amp; Cloud Infrastructure</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">API efisien, microservices, dan database</p>
+              </div>
+            </div>
+
+            <div class="skill-items">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Node.js / Express / NestJS</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Python / FastAPI / Django</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="88%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>PostgreSQL / Redis / MongoDB</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="92%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Docker &amp; Cloud Deployments (AWS/Vercel)</span>
+                  <span>84%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="84%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Workflow & Design -->
+          <div class="skill-category-card reveal-right delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">✦</div>
+              <div>
+                <h3>Tooling &amp; Creative Craft</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Produktivitas tim dan ketelitian desain</p>
+              </div>
+            </div>
+
+            <div class="skill-items">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Git, GitHub &amp; CI/CD Pipelines</span>
+                  <span>94%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="94%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Figma UI/UX Prototyping</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="88%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>RESTful &amp; GraphQL Architecture</span>
+                  <span>91%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="91%"></div>
+                </div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span>Web Performance &amp; SEO Optimization</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-level="95%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Tech Badges Cloud -->
+        <div class="tools-cloud reveal delay-2">
+          <h3>Ecosystem &amp; Frameworks</h3>
+          <div class="badges-wrapper">
+            <span class="interactive-badge"><span>⚡</span> Next.js</span>
+            <span class="interactive-badge"><span>🌐</span> React 19</span>
+            <span class="interactive-badge"><span>🔷</span> TypeScript</span>
+            <span class="interactive-badge"><span>🐍</span> Python</span>
+            <span class="interactive-badge"><span>🚀</span> FastAPI</span>
+            <span class="interactive-badge"><span>🐘</span> PostgreSQL</span>
+            <span class="interactive-badge"><span>🔴</span> Redis</span>
+            <span class="interactive-badge"><span>🐳</span> Docker</span>
+            <span class="interactive-badge"><span>🎨</span> Tailwind CSS</span>
+            <span class="interactive-badge"><span>📱</span> React Native</span>
+            <span class="interactive-badge"><span>⚡</span> Vite</span>
+            <span class="interactive-badge"><span>☁️</span> AWS / Edge</span>
+            <span class="interactive-badge"><span>🔄</span> GraphQL</span>
+            <span class="interactive-badge"><span>🎯</span> Figma</span>
+            <span class="interactive-badge"><span>🔒</span> OAuth &amp; JWT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         EXPERIENCE / CAREER TIMELINE
+         =============================================================== -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="mono-tag">Jejak Karir</span>
+          <h2>Pengalaman &amp; <span class="text-gradient">Tonggak Perjalanan</span></h2>
+          <p>Pengalaman profesional berkolaborasi dengan startup teknologi dan institusi terkemuka.</p>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2023 — Sekarang</div>
+              <h3 class="timeline-role">Lead Full-Stack Engineer</h3>
+              <div class="timeline-company">Aura Systems Lab • Remote</div>
+              <p class="timeline-desc">
+                Memimpin arsitektur aplikasi berbasis Next.js dan FastAPI, mengoptimalkan waktu render hingga 45%, serta
+                mengimplementasikan pipeline CI/CD zero-downtime deployment.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item reveal delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2021 — 2023</div>
+              <h3 class="timeline-role">Senior Frontend Specialist</h3>
+              <div class="timeline-company">Velox Digital Studio • Jakarta</div>
+              <p class="timeline-desc">
+                Mengembangkan 15+ produk web skala enterprise dengan standar aksesibilitas WCAG tingkat tinggi, animasi
+                visual 60fps, dan sistem komponen desain terpusat.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vue 3</span>
+                <span class="tech-tag">Design Systems</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item reveal delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2019 — 2021</div>
+              <h3 class="timeline-role">Junior Software Engineer</h3>
+              <div class="timeline-company">Kreativa Solutions • Bandung</div>
+              <p class="timeline-desc">
+                Membangun fitur modul backend Node.js, integrasi payment gateway, dan otomasi pengujian unit test dengan
+                cakupan kode di atas 85%.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Jest</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item reveal delay-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2015 — 2019</div>
+              <h3 class="timeline-role">Sarjana Ilmu Komputer (S.Kom)</h3>
+              <div class="timeline-company">Universitas Terkemuka • Indonesia</div>
+              <p class="timeline-desc">
+                Lulus dengan predikat Cum Laude. Fokus riset pada komputasi awan, struktur data lanjut, dan interaksi
+                manusia-komputer (HCI).
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================================================
+         CONTACT SECTION
+         =============================================================== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="mono-tag">Mari Terhubung</span>
+          <h2>Punya Visi Proyek? <span class="text-gradient">Mari Kita Wujudkan</span></h2>
+          <p>Terbuka untuk kesempatan freelance, posisi engineering strategis, atau sekadar diskusi seputar teknologi
+            terkini.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Info -->
+          <div class="contact-info reveal-left">
+            <h3>Siap Mengakselerasi Ide Anda</h3>
+            <p>
+              Saya selalu bersemangat mendiskusikan tantangan rekayasa perangkat lunak baru. Kirimkan pesan melalui
+              formulir atau kontak langsung melalui saluran di bawah ini.
+            </p>
+
+            <div class="contact-card-box">
+              <a href="mailto:Khomarulhidayat9@gmail.com" class="contact-method" id="mail-link">
+                <div class="contact-method-icon">✉</div>
+                <div class="contact-method-text">
+                  <span>Kirim Email Langsung</span>
+                  <strong>Khomarulhidayat9@gmail.com</strong>
+                </div>
+              </a>
+
+              <a href="https://wa.me/6282279709194?text=Halo%20saya%20ingin%20bertanya" target="_blank"
+                rel="noopener noreferrer" class="contact-method" id="whatsapp-link">
+                <div class="contact-method-icon">💬</div>
+                <div class="contact-method-text">
+                  <span>Chat Cepat</span>
+                  <strong>WhatsApp</strong>
+                </div>
+              </a>
+
+              <a href="https://maps.app.goo.gl/wqjNtoBeoGS8eVfV9" target="_blank" rel="noopener noreferrer" class="contact-method" id="location-link">
+                <div class="contact-method-icon">&#9990;</div>
+                <div class="contact-method-text">
+                  <span>Lokasi</span>
+                  <strong>Pesisir Barat, Lampung (Remote Available)</strong>
+                </div>
+              </a>
+
+              <!-- Embedded Map -->
+              <div class="map-embed-wrapper">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.0!2d104.012181!3d-5.287547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e47bd001ab60a4d%3A0x1cf864e3d7702859!2sRull%20House!5e0!3m2!1sid!2sid!4v1700000000001!5m2!1sid!2sid"
+                  width="100%"
+                  height="180"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Peta Rull House"
+                  class="map-iframe">
+                </iframe>
+                <div class="map-overlay-label">
+                  <span>&#9990;</span>
+                  <span>Pesisir Barat, Lampung</span>
+                </div>
+              </div>
+
+              <button class="copy-email-btn" id="copy-email-btn" data-email="Khomarulhidayat9@gmail.com"
+                aria-label="Salin Alamat Email">
+                <span> Salin Email ke Clipboard</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card reveal-right">
+            <form id="contact-form" autocomplete="off">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Nama Lengkap</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Misal: Rull" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Alamat Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="nama@perusahaan.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subjek / Topik</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Misal: Diskusi Proyek Web App"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Pesan Anda</label>
+                <textarea id="form-message" class="form-textarea"
+                  placeholder="Ceritakan ide proyek atau kebutuhan Anda secara ringkas..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-btn" id="submit-btn">
+                <span>Kirim Pesan</span>
+                <span class="btn-icon">✈</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =================================================================
+       MODAL (PROJECT DETAIL VIEW)
+       ================================================================= -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Tutup Jendela Detail">✕</button>
+
+      <div class="modal-header-visual">
+        <svg viewBox="0 0 600 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="600" height="240" fill="#090a10" />
+          <circle cx="300" cy="120" r="100" stroke="rgba(99,102,241,0.2)" stroke-width="2" />
+          <path d="M100 180 Q 300 60, 500 180" stroke="url(#modal-grad)" stroke-width="3" fill="none" />
+          <defs>
+            <linearGradient id="modal-grad" x1="100" y1="60" x2="500" y2="180">
+              <stop stop-color="#6366f1" />
+              <stop offset="1" stop-color="#06b6d4" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="modal-body">
+        <span class="mono-tag" id="modal-category">Web App</span>
+        <h2 id="modal-title">Judul Proyek</h2>
+        <p id="modal-description">Deskripsi detail proyek akan ditampilkan di sini secara dinamis.</p>
+
+        <h4
+          style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+          Teknologi yang Digunakan</h4>
+        <div class="modal-tech-list" id="modal-tech-list">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <div class="modal-actions">
+          <a href="#" class="btn btn-primary" id="modal-live-link" target="_blank" rel="noopener noreferrer">
+            <span>Buka Demo Langsung</span>
+            <span class="btn-icon">↗</span>
+          </a>
+          <a href="#" class="btn btn-secondary" id="modal-code-link" target="_blank" rel="noopener noreferrer">
+            <span>Repositori GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       FOOTER
+       ================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h4>Khomarul<span class="text-gradient">.dev</span></h4>
+          <p>Menciptakan nilai nyata melalui kode yang bersih dan estetika minimalis.</p>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub"
+            aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn"
+            aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Twitter / X"
+            aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Khomarul. Dibuat dengan presisi, kesederhanaan, dan performa modern.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/canvas-ambient.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
