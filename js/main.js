@@ -381,15 +381,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------
-   * 9. CONTACT FORM HANDLER
+   * 9. CONTACT FORM HANDLER (FormSubmit AJAX Integration)
    * ------------------------------------------------------------------ */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('form-name').value.trim();
       const email = document.getElementById('form-email').value.trim();
+      const subject = document.getElementById('form-subject').value.trim();
       const message = document.getElementById('form-message').value.trim();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
 
@@ -403,12 +404,38 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerHTML = '<span>Mengirim...</span>';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/Khomarulhidayat9@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: subject ? `Portofolio: ${subject}` : `Pesan Baru Portofolio dari ${name}`,
+            message: message,
+            _captcha: "false",
+            _template: "table"
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && (data.success === "true" || data.success === true || response.status === 200)) {
+          contactForm.reset();
+          showToast(`Terima kasih, ${name}! Pesan berhasil dikirim ke email saya.`, '🚀');
+        } else {
+          throw new Error(data.message || 'Gagal mengirim pesan');
+        }
+      } catch (err) {
+        console.error('Contact Form Error:', err);
+        showToast('Gagal mengirim pesan. Silakan hubungi via WhatsApp atau Email langsung.', '⚠️');
+      } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        contactForm.reset();
-        showToast(`Terima kasih, ${name}! Pesan berhasil dikirim.`, '🚀');
-      }, 1200);
+      }
     });
   }
 
