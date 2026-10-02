@@ -62,6 +62,14 @@
       </nav>
 
       <div class="nav-actions">
+        <!-- Real-Time Clock Widget -->
+        <div class="nav-clock" id="nav-clock" role="button" tabindex="0" title="Waktu Nyata Bandar Lampung (WIB • UTC+7) — Klik untuk ubah format 12j / 24j" aria-label="Jam Waktu Nyata">
+          <span class="nav-clock-pulse"></span>
+          <span class="nav-clock-icon">🕒</span>
+          <span class="nav-clock-time" id="nav-clock-time">--:--:--</span>
+          <span class="nav-clock-tz">WIB</span>
+        </div>
+
         <!-- Accent Theme Palette Picker -->
         <div class="theme-picker" title="Pilih Aksen Tema" id="theme-picker">
           <span class="color-dot dot-indigo active" data-theme="indigo" title="Cosmic Indigo"></span>
@@ -88,9 +96,18 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <div class="status-badge reveal">
-              <span class="pulse-dot"></span>
-              <span>Tersedia untuk Proyek Baru &amp; Kolaborasi</span>
+            <div class="hero-status-row reveal">
+              <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span>Tersedia untuk Proyek Baru &amp; Kolaborasi</span>
+              </div>
+              <div class="hero-clock-badge" id="hero-clock-badge" title="Waktu Nyata Bandar Lampung (WIB • UTC+7)">
+                <span class="clock-pin-icon">📍</span>
+                <span class="clock-city">Bandar Lampung</span>
+                <span class="clock-separator">•</span>
+                <span class="hero-clock-time" id="hero-clock-time">--:--:--</span>
+                <span class="hero-clock-tz">WIB</span>
+              </div>
             </div>
 
             <h1 class="hero-title reveal delay-1">
@@ -872,30 +889,30 @@
                 </div>
               </a>
 
-              <a href="https://maps.app.goo.gl/wqjNtoBeoGS8eVfV9" target="_blank" rel="noopener noreferrer" class="contact-method" id="location-link">
-                <div class="contact-method-icon">&#9990;</div>
+              <a href="https://maps.google.com/?q=Bandar+Lampung,+Indonesia" target="_blank" rel="noopener noreferrer" class="contact-method" id="location-link">
+                <div class="contact-method-icon">📍</div>
                 <div class="contact-method-text">
                   <span>Lokasi</span>
-                  <strong>Pesisir Barat, Lampung (Remote Available)</strong>
+                  <strong>Bandar Lampung, Indonesia (Remote Available)</strong>
                 </div>
               </a>
 
               <!-- Embedded Map -->
               <div class="map-embed-wrapper">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.0!2d104.012181!3d-5.287547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e47bd001ab60a4d%3A0x1cf864e3d7702859!2sRull%20House!5e0!3m2!1sid!2sid!4v1700000000001!5m2!1sid!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127116.14150567673!2d105.2043648!3d-5.4124907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40da42fb0b25e7%3A0x3039d80b220cc70!2sKota%20Bandar%20Lampung%2C%20Lampung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
                   width="100%"
                   height="180"
                   style="border:0;"
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
-                  title="Peta Rull House"
+                  title="Peta Bandar Lampung"
                   class="map-iframe">
                 </iframe>
                 <div class="map-overlay-label">
-                  <span>&#9990;</span>
-                  <span>Pesisir Barat, Lampung</span>
+                  <span></span>
+                  <span>Bandar Lampung, Indonesia</span>
                 </div>
               </div>
 
@@ -1026,6 +1043,12 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 Khomarul. Dibuat dengan presisi, kesederhanaan, dan performa modern.</p>
+        <div class="footer-clock-box">
+          <span class="footer-clock-dot"></span>
+          <span>Bandar Lampung: <strong id="footer-clock-time">--:--:-- WIB</strong></span>
+          <span class="footer-sep">•</span>
+          <span id="footer-clock-date">--</span>
+        </div>
       </div>
     </div>
   </footer>

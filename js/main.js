@@ -473,4 +473,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ------------------------------------------------------------------
+   * 11. REAL-TIME CLOCK (Bandar Lampung, WIB / UTC+7)
+   * ------------------------------------------------------------------ */
+  const navClock = document.getElementById('nav-clock');
+  const navClockTime = document.getElementById('nav-clock-time');
+  const heroClockTime = document.getElementById('hero-clock-time');
+  const footerClockTime = document.getElementById('footer-clock-time');
+  const footerClockDate = document.getElementById('footer-clock-date');
+
+  let is24Hour = localStorage.getItem('portfolio-clock-24h') !== 'false';
+
+  function updateRealTimeClock() {
+    const now = new Date();
+
+    // Bandar Lampung Timezone (Asia/Jakarta, UTC+7 / WIB)
+    const optionsTime = {
+      timeZone: 'Asia/Jakarta',
+      hour12: !is24Hour,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+
+    let timeString = new Intl.DateTimeFormat('id-ID', optionsTime).format(now);
+    // Standardize colon separators
+    timeString = timeString.replace(/\./g, ':');
+
+    const optionsDate = {
+      timeZone: 'Asia/Jakarta',
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    };
+    const dateString = new Intl.DateTimeFormat('id-ID', optionsDate).format(now);
+
+    if (navClockTime) navClockTime.textContent = timeString;
+    if (heroClockTime) heroClockTime.textContent = timeString;
+    if (footerClockTime) footerClockTime.textContent = `${timeString} WIB`;
+    if (footerClockDate) footerClockDate.textContent = dateString;
+
+    if (navClock) {
+      navClock.setAttribute(
+        'title',
+        `${dateString} • Waktu Bandar Lampung (WIB • UTC+7)\nKlik untuk ganti ke format ${is24Hour ? '12 jam (AM/PM)' : '24 jam'}`
+      );
+    }
+  }
+
+  updateRealTimeClock();
+  setInterval(updateRealTimeClock, 1000);
+
+  if (navClock) {
+    navClock.addEventListener('click', () => {
+      is24Hour = !is24Hour;
+      localStorage.setItem('portfolio-clock-24h', is24Hour ? 'true' : 'false');
+      updateRealTimeClock();
+      showToast(`Format jam: ${is24Hour ? '24 Jam' : '12 Jam (AM/PM)'}`, '🕒');
+    });
+
+    navClock.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navClock.click();
+      }
+    });
+  }
+
 });
